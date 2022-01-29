@@ -35,6 +35,13 @@ spring:
                   filters:
                     - StripPrefix=1
 
+                - id: notification
+                  uri: lb://wayd-notification
+                  predicates:
+                    - Path=/wayd-notification/**
+                  filters:
+                    - StripPrefix=1
+
 
             default-filters:
               - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
