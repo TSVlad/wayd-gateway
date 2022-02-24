@@ -42,6 +42,13 @@ spring:
                   filters:
                     - StripPrefix=1
 
+                - id: validator
+                  uri: lb://wayd-validator
+                  predicates:
+                    - Path=/wayd-validator/**
+                  filters:
+                    - StripPrefix=1
+
 
             default-filters:
               - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
