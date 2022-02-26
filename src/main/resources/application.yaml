@@ -49,6 +49,13 @@ spring:
                   filters:
                     - StripPrefix=1
 
+                - id: moderation
+                  uri: lb://wayd-moderation
+                  predicates:
+                    - Path=/wayd-moderation/**
+                  filters:
+                    - StripPrefix=1
+
 
             default-filters:
               - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
